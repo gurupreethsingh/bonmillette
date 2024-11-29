@@ -14,6 +14,7 @@ import OurStory from "./pages/common_pages/OurStory";
 import AllBlogs from "./pages/blog_pages/AllBlogs";
 import SingleBlog from "./pages/blog_pages/SingleBlog";
 import AllTestimonials from "./pages/testimonial_pages/AllTestimonials";
+import PrivacyPolicy from "./pages/common_pages/PrivacyPolicy";
 
 const PageTitle = ({ title }) => {
   useEffect(() => {
@@ -58,6 +59,8 @@ const TitleUpdater = () => {
       return "Single Blog";
     } else if (pathname === "/testimonials") {
       return "Testimonials";
+    } else if (pathname === "/privacy-policy") {
+      return "Privacy Policy";
     } else {
       return "Page Not Found";
     }
@@ -79,13 +82,13 @@ function App() {
           <Route path="/home" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/shop" element={<AllProducts />} />
-
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/all-blogs" element={<AllBlogs />} />
           <Route path="/single-blog" element={<SingleBlog />} />
           <Route path="/testimonials" element={<AllTestimonials />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/page-not-found" element={<PageNotFound />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
