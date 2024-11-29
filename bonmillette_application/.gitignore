@@ -1,0 +1,69 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+dist/
+build/
+coverage/
+client/build/
+backend/dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+*.tlog
+*.log.*
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.iml
+
+# Temporary files and lockfiles
+*.tmp
+*.lock
+
+# MongoDB database dumps
+*.mongo
+*.bson
+dump/
+
+# React specific
+client/node_modules/
+client/.cache/
+client/.next/
+client/public/static/
+client/src/assets/
+
+# Backend specific
+backend/node_modules/
+backend/.cache/
+
+# Compiled code and dependencies
+*.pyc
+*.class
+*.dll
+*.exe
+
+# Miscellaneous
+*.zip
+*.tar.gz
+*.rar
+*.bak
+*.swp
+
+# Prevent sensitive files
+credentials.json
+secrets.json
