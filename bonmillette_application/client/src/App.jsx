@@ -55,8 +55,9 @@ const TitleUpdater = () => {
       return "Our Story";
     } else if (pathname === "/all-blogs") {
       return "All Blogs";
-    } else if (pathname === "/single-blogs") {
-      return "Single Blog";
+    } else if (pathname.startsWith("/single-blog/")) {
+      const id = pathname.split("/")[2]; // Extract the ID
+      return `Single Blog - ${id}`;
     } else if (pathname === "/testimonials") {
       return "Testimonials";
     } else if (pathname === "/privacy-policy") {
@@ -85,7 +86,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/all-blogs" element={<AllBlogs />} />
-          <Route path="/single-blog" element={<SingleBlog />} />
+          <Route path="/single-blog/:id" element={<SingleBlog />} />
           <Route path="/testimonials" element={<AllTestimonials />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

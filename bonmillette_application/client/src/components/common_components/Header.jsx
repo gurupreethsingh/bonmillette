@@ -106,6 +106,13 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="flex items-center space-x-6">
+          {/* My Account Link */}
+          <a
+            href="/my-account"
+            className="hidden md:flex text-black font-bold text-lg"
+          >
+            My Account
+          </a>
           <button className="text-black" onClick={openSearchModal}>
             <AiOutlineSearch size={20} />
           </button>
