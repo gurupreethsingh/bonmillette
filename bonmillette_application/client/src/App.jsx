@@ -15,6 +15,10 @@ import AllBlogs from "./pages/blog_pages/AllBlogs";
 import SingleBlog from "./pages/blog_pages/SingleBlog";
 import AllTestimonials from "./pages/testimonial_pages/AllTestimonials";
 import PrivacyPolicy from "./pages/common_pages/PrivacyPolicy";
+import MyAccount from "./pages/my_account_pages/MyAccount";
+import SingleProduct from "./pages/shop_pages/SingleProduct";
+import Cart from "./pages/cart_pages/Cart";
+import Checkout from "./pages/cart_pages/Checkout";
 
 const PageTitle = ({ title }) => {
   useEffect(() => {
@@ -62,7 +66,19 @@ const TitleUpdater = () => {
       return "Testimonials";
     } else if (pathname === "/privacy-policy") {
       return "Privacy Policy";
+    } else if (pathname === "/my-account") {
+      return "My Account";
+    } else if (pathname === "/all-blogs") {
+      return "All Blogs";
+    } else if (pathname.startsWith("/single-product/")) {
+      const id = pathname.split("/")[2]; // Extract the ID
+      return `Single pruduct - ${id}`;
+    } else if (pathname === "/cart") {
+      return "Cart";
+    } else if (pathname === "/checkout") {
+      return "Checkout";
     } else {
+      
       return "Page Not Found";
     }
   };
@@ -83,6 +99,7 @@ function App() {
           <Route path="/home" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/shop" element={<AllProducts />} />
+          <Route path="/single-product/:id" element={<SingleProduct />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/all-blogs" element={<AllBlogs />} />
@@ -90,6 +107,9 @@ function App() {
           <Route path="/testimonials" element={<AllTestimonials />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/my-account" element={<MyAccount />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/page-not-found" element={<PageNotFound />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
